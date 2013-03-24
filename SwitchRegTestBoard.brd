@@ -136,6 +136,8 @@
 <wire x1="44.938" y1="0" x2="44.938" y2="33.198" width="0" layer="20"/>
 <wire x1="44.938" y1="33.198" x2="0" y2="33.198" width="0" layer="20"/>
 <wire x1="0" y1="33.198" x2="0" y2="0" width="0" layer="20"/>
+<text x="2.286" y="28.448" size="1.016" layer="1">Switcher Test Brd
+2013-03-24</text>
 </plain>
 <libraries>
 <library name="adafruit">
@@ -600,12 +602,14 @@ Toner transfer etch tuned DRU</description>
 <wire x1="23.132" y1="28.067" x2="24.638" y2="27.704" width="1.016" layer="1"/>
 <wire x1="6.9057" y1="20.338" x2="8.382" y2="21.608" width="1.016" layer="1"/>
 <wire x1="6.9057" y1="20.0072" x2="6.9057" y2="20.338" width="1.016" layer="1"/>
-<polygon width="0.254" layer="1" spacing="0.4064" pour="hatch" isolate="0.254" rank="3">
-<vertex x="0" y="30.988"/>
+<polygon width="0.254" layer="1" spacing="0.508" pour="hatch" isolate="0.3048" rank="3">
+<vertex x="0" y="33.02"/>
 <vertex x="0" y="-0.254"/>
 <vertex x="44.45" y="-0.254"/>
-<vertex x="44.45" y="30.988"/>
+<vertex x="44.45" y="33.02"/>
 </polygon>
+<wire x1="34.798" y1="5.08" x2="37.338" y2="5.08" width="0" layer="19" extent="1-1"/>
+<wire x1="42.037" y1="18.796" x2="37.338" y2="5.08" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="VR1L">
 <contactref element="VR1" pad="2"/>
@@ -614,13 +618,13 @@ Toner transfer etch tuned DRU</description>
 <wire x1="21.066" y1="14.351" x2="21.336" y2="17.526" width="0.3048" layer="1"/>
 <wire x1="21.336" y1="17.526" x2="19.4564" y2="17.399" width="0.3048" layer="1"/>
 <wire x1="21.066" y1="14.351" x2="25.781" y2="15.53" width="0.3048" layer="1"/>
-<polygon width="0.3048" layer="1">
+<polygon width="0.3048" layer="1" isolate="0.254">
 <vertex x="19.431" y="16.891"/>
-<vertex x="20.955" y="16.891"/>
+<vertex x="20.701" y="16.637"/>
 <vertex x="21.209" y="13.843"/>
-<vertex x="25.781" y="13.843"/>
-<vertex x="26.035" y="17.653"/>
-<vertex x="19.431" y="17.653"/>
+<vertex x="29.337" y="13.589"/>
+<vertex x="28.575" y="18.415"/>
+<vertex x="19.431" y="18.161"/>
 </polygon>
 </signal>
 <signal name="N$2">
@@ -647,7 +651,7 @@ Toner transfer etch tuned DRU</description>
 <contactref element="R1" pad="2"/>
 <contactref element="JP1" pad="4"/>
 <contactref element="C4" pad="+"/>
-<polygon width="0.3048" layer="1">
+<polygon width="0.3048" layer="1" isolate="0.254">
 <vertex x="1.524" y="14.986"/>
 <vertex x="6.096" y="14.986"/>
 <vertex x="6.223" y="18.288"/>
@@ -657,8 +661,8 @@ Toner transfer etch tuned DRU</description>
 <vertex x="14.224" y="18.542"/>
 <vertex x="12.7" y="18.542"/>
 <vertex x="11.557" y="18.034"/>
-<vertex x="11.557" y="16.002"/>
-<vertex x="8.89" y="15.875"/>
+<vertex x="11.811" y="15.24"/>
+<vertex x="9.398" y="15.113"/>
 <vertex x="7.239" y="11.43"/>
 <vertex x="1.524" y="11.43"/>
 </polygon>
@@ -702,8 +706,8 @@ Toner transfer etch tuned DRU</description>
 <wire x1="25.781" y1="20.03" x2="30.099" y2="19.812" width="0.8128" layer="1"/>
 <polygon width="0.3048" layer="1">
 <vertex x="15.875" y="23.749"/>
-<vertex x="23.368" y="25.019"/>
-<vertex x="25.273" y="24.765"/>
+<vertex x="23.114" y="25.527"/>
+<vertex x="27.051" y="25.273"/>
 <vertex x="28.956" y="23.368"/>
 <vertex x="28.448" y="18.415"/>
 <vertex x="26.289" y="18.923"/>
@@ -713,8 +717,8 @@ Toner transfer etch tuned DRU</description>
 <vertex x="18.415" y="22.733"/>
 <vertex x="15.875" y="21.336"/>
 </polygon>
-<polygon width="0.3048" layer="1">
-<vertex x="28.448" y="18.288"/>
+<polygon width="0.3048" layer="1" isolate="0.254">
+<vertex x="29.21" y="19.05"/>
 <vertex x="30.734" y="17.526"/>
 <vertex x="33.274" y="13.462"/>
 <vertex x="33.274" y="20.066"/>
@@ -732,4 +736,10 @@ Toner transfer etch tuned DRU</description>
 </signals>
 </board>
 </drawing>
+<compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
+</compatibility>
 </eagle>
