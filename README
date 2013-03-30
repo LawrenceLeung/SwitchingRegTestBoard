@@ -4,3 +4,24 @@ Test board for MC34063AD switching reg
 See this helpful calculator to choose values:
 
 http://dics.voicecontrol.ro/tutorials/mc34063/
+
+Here's my first test making ~5V .5A (2013-03-30):
+12.00 ±20% V
+Vout =	5.17 V
+Iout =	0.50 A
+Vripple =	0.03 V
+---
+Vin min =	9.60 V
+Ton / Toff =	1.39
+Ton + Toff =	20.00 µs (micro seconds)
+Toff =	8.36 µs (micro seconds)
+Ton =	11.64 µs (micro seconds)
+Ct =	465.53 pF
+Ipk =	1.00 A
+Rsc =	0.30 Ω
+Lmin =	45.74 µH
+Co =	100.00 µF
+
+--- (My tweaked resistor values for what I have)
+R2  = 1.5k	
+R3 = ((Vout - 1.25) / 1.25) * R1 =	4.7kΩ
