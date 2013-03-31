@@ -1,11 +1,12 @@
 Test board for MC34063AD switching reg
 
+There are values in the schematic, but you should pick your own values.
 
 See this helpful calculator to choose values:
 
 http://dics.voicecontrol.ro/tutorials/mc34063/
 
-Here's my first test making ~5V .5A (2013-03-30):
+Here's my first test (2013-03-30):
 12.00 ±20% V
 Vout =	5.17 V
 Iout =	0.50 A
@@ -25,3 +26,13 @@ Co =	100.00 µF
 --- (My tweaked resistor values for what I have)
 R2  = 1.5k	
 R3 = ((Vout - 1.25) / 1.25) * R1 =	4.7kΩ
+
+(using 5% resistors since that's what I got)
+
+L1 = MULTICOMP - MCSDC0604-470KU - INDUCTOR, 47UH, 720MA, ±10%
+L2 = BOURNS - SRN3015-1R0Y - INDUCTOR, 1UH, 2.35A, ±30%, 145MHZ
+C1 = 470pf ceramic
+C3 = 10uF tantalum
+D1 = 821-B0520LW Schottky Diodes & Rectifiers 20 Volt 0.5 Amp 5.5 Amp IFSM
+C2,4 = 100uF aluminum cap 0.3ohm ESR (647-UVR1V101MEA1TA)
+
