@@ -589,7 +589,7 @@ Toner transfer etch tuned DRU</description>
 </element>
 <element name="C3" library="LL" package="PANASONIC_C" value="100uf" x="35.687" y="23.368" rot="R270"/>
 <element name="JP1" library="LL" package="1X04-SMD-LONG" value="" x="2.794" y="18.034" rot="R270"/>
-<element name="JP2" library="LL" package="1X04-SMD-LONG" value="" x="49.911" y="17.272" rot="R90"/>
+<element name="JP2" library="LL" package="1X04-SMD-LONG" value="" x="41.021" y="22.352" rot="R90"/>
 <element name="D1" library="dp_devices" package="SOD-123" value="SHOTTKY" x="30.099" y="15.875"/>
 <element name="C4" library="LL" package="PANASONIC_C" value="100uf" x="8.382" y="20.066" rot="R270"/>
 <element name="U$1" library="LL" package="HEADER-525IDEB" value="HEADER-525IDEB" x="20.828" y="5.08"/>
@@ -624,9 +624,9 @@ Toner transfer etch tuned DRU</description>
 <wire x1="6.858" y1="19.939" x2="6.9057" y2="20.0072" width="0.8128" layer="1"/>
 <wire x1="6.9057" y1="20.0072" x2="8.128" y2="24.384" width="0.8128" layer="1"/>
 <wire x1="8.128" y1="24.384" x2="14.859" y2="25.892" width="0.8128" layer="1"/>
-<wire x1="49.911" y1="21.082" x2="39.878" y2="25.146" width="1.016" layer="1"/>
+<wire x1="41.021" y1="26.162" x2="39.878" y2="25.146" width="1.016" layer="1"/>
 <wire x1="39.878" y1="25.146" x2="35.687" y2="25.418" width="1.016" layer="1"/>
-<wire x1="49.911" y1="18.542" x2="49.911" y2="21.082" width="0.8128" layer="1"/>
+<wire x1="41.021" y1="23.622" x2="41.021" y2="26.162" width="0.8128" layer="1"/>
 <wire x1="14.859" y1="25.892" x2="12.43" y2="25.638" width="1.016" layer="1"/>
 <wire x1="12.43" y1="25.638" x2="16.764" y2="26.162" width="1.016" layer="1"/>
 <wire x1="16.764" y1="26.162" x2="18.542" y2="27.559" width="1.016" layer="1"/>
@@ -643,7 +643,9 @@ Toner transfer etch tuned DRU</description>
 <contactref element="RDIVL1" pad="1"/>
 <polygon width="0.254" layer="1" isolate="0.254">
 <vertex x="17.526" y="22.606"/>
-<vertex x="27.686" y="21.082"/>
+<vertex x="19.812" y="22.606"/>
+<vertex x="21.082" y="21.082"/>
+<vertex x="28.194" y="21.082"/>
 <vertex x="29.972" y="19.812"/>
 <vertex x="31.496" y="18.288"/>
 <vertex x="28.448" y="20.066"/>
@@ -714,7 +716,7 @@ Toner transfer etch tuned DRU</description>
 <contactref element="RDIVL1" pad="2"/>
 <polygon width="0.254" layer="1" isolate="0.254">
 <vertex x="12.192" y="23.876"/>
-<vertex x="11.938" y="19.558"/>
+<vertex x="11.684" y="19.558"/>
 <vertex x="14.732" y="19.558"/>
 <vertex x="14.478" y="22.86"/>
 <vertex x="17.526" y="23.114"/>
@@ -728,7 +730,7 @@ Toner transfer etch tuned DRU</description>
 <contactref element="U$1" pad="4_DS3"/>
 <contactref element="U$1" pad="2_DCD"/>
 <wire x1="32.646" y1="21.59" x2="35.687" y2="21.318" width="0.8128" layer="1"/>
-<wire x1="32.646" y1="21.59" x2="49.911" y2="16.002" width="1.016" layer="1"/>
+<wire x1="32.646" y1="21.59" x2="41.021" y2="21.082" width="1.016" layer="1"/>
 <polygon width="0.3048" layer="1">
 <vertex x="40.386" y="8.382"/>
 <vertex x="44.704" y="9.652"/>
@@ -758,7 +760,7 @@ Toner transfer etch tuned DRU</description>
 <vertex x="21.59" y="21.59"/>
 </polygon>
 <contactref element="TP1" pad="TP"/>
-<wire x1="30.346" y1="21.59" x2="49.911" y2="13.462" width="0" layer="19" extent="1-1"/>
+<wire x1="30.346" y1="21.59" x2="41.021" y2="18.542" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="1_GND">
 <contactref element="U$1" pad="1_GND"/>
