@@ -12470,6 +12470,66 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 </deviceset>
 </devicesets>
 </library>
+<library name="inductor-neosid">
+<description>&lt;b&gt;Neosid Chokes and Transformers&lt;/b&gt;&lt;p&gt;
+
+Based on the following sources:
+&lt;ul&gt;
+&lt;li&gt;Electronic Component Book, Part 2 : Chokes, Fixed Value Inductors
+&lt;li&gt;Part 3 : Filters, Coil Assemblies, Thermoplastic Parts
+&lt;li&gt;Part 4 : SMD Filters, Coils, Fixed Value Inductors
+&lt;li&gt;www.neosid.de
+&lt;/ul&gt;
+ &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="SM-NE29">
+<description>SMD CHIP &lt;B&gt;INDUCTOR&lt;/B&gt;&lt;p&gt;
+3 x 2.8 x 2.2 mm</description>
+<wire x1="-1.4" y1="-1.3" x2="-1.4" y2="1.3" width="0.2032" layer="51"/>
+<wire x1="-1.4" y1="1.3" x2="1.4" y2="1.3" width="0.2032" layer="51"/>
+<wire x1="1.4" y1="1.3" x2="1.4" y2="-1.3" width="0.2032" layer="51"/>
+<wire x1="1.4" y1="-1.3" x2="-1.4" y2="-1.3" width="0.2032" layer="51"/>
+<smd name="1" x="-1.15" y="0" dx="1" dy="2.54" layer="1"/>
+<smd name="2" x="1.15" y="0" dx="1" dy="2.54" layer="1"/>
+<text x="-1.581" y="1.497" size="1.27" layer="25">&gt;NAME</text>
+<text x="-1.581" y="-2.751" size="1.27" layer="27">&gt;VALUE</text>
+</package>
+</packages>
+<symbols>
+<symbol name="L">
+<text x="-3.81" y="1.778" size="1.778" layer="95">&gt;NAME</text>
+<text x="-3.81" y="-3.556" size="1.778" layer="96">&gt;VALUE</text>
+<rectangle x1="-3.81" y1="-1.27" x2="3.81" y2="1.27" layer="94"/>
+<pin name="1" x="-5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1"/>
+<pin name="2" x="5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1" rot="R180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="SM-NE29" prefix="L" uservalue="yes">
+<description>&lt;b&gt;INDUCTOR&lt;/b&gt;&lt;p&gt;
+SMD chip inductor</description>
+<gates>
+<gate name="G$1" symbol="L" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SM-NE29">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MF" value="" constant="no"/>
+<attribute name="MPN" value="" constant="no"/>
+<attribute name="OC_FARNELL" value="unknown" constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -12486,12 +12546,12 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
 <part name="GND3" library="supply1" deviceset="GND" device=""/>
-<part name="R1" library="LL" deviceset="R-US_" device="R1206" value="1.5"/>
-<part name="R2" library="LL" deviceset="R-US_" device="R0805" value="16k"/>
-<part name="R3" library="LL" deviceset="R-US_" device="R0805" value="10k"/>
+<part name="RSC" library="LL" deviceset="R-US_" device="R1206" value="1.5"/>
+<part name="RDIVH" library="LL" deviceset="R-US_" device="R0805" value="16k"/>
+<part name="RDIVL" library="LL" deviceset="R-US_" device="R0805" value="10k"/>
 <part name="GND4" library="supply1" deviceset="GND" device=""/>
 <part name="C2" library="LL" deviceset="CPOL-US" device="C" value="22uf"/>
-<part name="L2" library="LL" deviceset="L-US" device="L0707MM" value="1uH"/>
+<part name="L2" library="inductor-neosid" deviceset="SM-NE29" device="" value="1uH"/>
 <part name="C3" library="LL" deviceset="CPOL-US" device="C" value="100uf"/>
 <part name="GND5" library="supply1" deviceset="GND" device=""/>
 <part name="JP1" library="LL" deviceset="HEADER1X4" device="SMD_LONGPADS"/>
@@ -12506,6 +12566,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="TP1" library="testpad" deviceset="TP" device="TP10R"/>
 <part name="TP2" library="testpad" deviceset="TP" device="TP10R"/>
 <part name="TP3" library="testpad" deviceset="TP" device="TP10R"/>
+<part name="RDIVL1" library="LL" deviceset="R-US_" device="R0805" value="10k"/>
 </parts>
 <sheets>
 <sheet>
@@ -12519,9 +12580,9 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <instance part="GND1" gate="1" x="86.36" y="43.18"/>
 <instance part="GND2" gate="1" x="104.14" y="17.78"/>
 <instance part="GND3" gate="1" x="22.86" y="25.4"/>
-<instance part="R1" gate="G$1" x="35.56" y="45.72" rot="R90"/>
-<instance part="R2" gate="G$1" x="58.42" y="71.12"/>
-<instance part="R3" gate="G$1" x="48.26" y="66.04" rot="R90"/>
+<instance part="RSC" gate="G$1" x="35.56" y="45.72" rot="R90"/>
+<instance part="RDIVH" gate="G$1" x="58.42" y="71.12"/>
+<instance part="RDIVL" gate="G$1" x="48.26" y="66.04" rot="R90"/>
 <instance part="GND4" gate="1" x="48.26" y="58.42"/>
 <instance part="C2" gate="G$1" x="104.14" y="27.94"/>
 <instance part="L2" gate="G$1" x="116.84" y="38.1" rot="R90"/>
@@ -12539,6 +12600,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <instance part="TP1" gate="G$1" x="101.6" y="40.64"/>
 <instance part="TP2" gate="G$1" x="129.54" y="40.64"/>
 <instance part="TP3" gate="G$1" x="27.94" y="53.34"/>
+<instance part="RDIVL1" gate="G$1" x="53.34" y="66.04" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -12568,7 +12630,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <wire x1="73.66" y1="27.94" x2="73.66" y2="35.56" width="0.1524" layer="91"/>
 <junction x="40.64" y="40.64"/>
 <junction x="40.64" y="35.56"/>
-<pinref part="R1" gate="G$1" pin="1"/>
+<pinref part="RSC" gate="G$1" pin="1"/>
 <pinref part="VR1" gate="G$1" pin="IPK"/>
 <pinref part="VR1" gate="G$1" pin="DC"/>
 <pinref part="VR1" gate="G$1" pin="SWC"/>
@@ -12596,8 +12658,11 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <pinref part="VR1" gate="G$1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="R3" gate="G$1" pin="1"/>
+<pinref part="RDIVL" gate="G$1" pin="1"/>
 <pinref part="GND4" gate="1" pin="GND"/>
+<pinref part="RDIVL1" gate="G$1" pin="1"/>
+<wire x1="48.26" y1="60.96" x2="53.34" y2="60.96" width="0.1524" layer="91"/>
+<junction x="48.26" y="60.96"/>
 </segment>
 <segment>
 <wire x1="104.14" y1="22.86" x2="104.14" y2="20.32" width="0.1524" layer="91"/>
@@ -12665,30 +12730,31 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <junction x="35.56" y="50.8"/>
 <junction x="30.48" y="50.8"/>
 <pinref part="VR1" gate="G$1" pin="VCC"/>
-<pinref part="R1" gate="G$1" pin="2"/>
+<pinref part="RSC" gate="G$1" pin="2"/>
 <pinref part="JP1" gate="G$1" pin="4"/>
 <pinref part="C4" gate="G$1" pin="+"/>
 <pinref part="TP3" gate="G$1" pin="TP"/>
 <junction x="27.94" y="50.8"/>
 </segment>
 </net>
-<net name="N$6" class="0">
+<net name="DIVIDERCENTER" class="0">
 <segment>
-<wire x1="43.18" y1="50.8" x2="43.18" y2="60.96" width="0.1524" layer="91"/>
-<wire x1="43.18" y1="60.96" x2="43.18" y2="71.12" width="0.1524" layer="91"/>
+<wire x1="43.18" y1="50.8" x2="43.18" y2="71.12" width="0.1524" layer="91"/>
 <wire x1="43.18" y1="71.12" x2="48.26" y2="71.12" width="0.1524" layer="91"/>
 <wire x1="48.26" y1="71.12" x2="53.34" y2="71.12" width="0.1524" layer="91"/>
 <junction x="48.26" y="71.12"/>
 <pinref part="VR1" gate="G$1" pin="COMP"/>
-<pinref part="R3" gate="G$1" pin="2"/>
-<pinref part="R2" gate="G$1" pin="1"/>
+<pinref part="RDIVL" gate="G$1" pin="2"/>
+<pinref part="RDIVH" gate="G$1" pin="1"/>
+<pinref part="RDIVL1" gate="G$1" pin="2"/>
+<junction x="53.34" y="71.12"/>
 </segment>
 </net>
 <net name="VRFOUT33" class="0">
 <segment>
 <wire x1="134.62" y1="30.48" x2="134.62" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="134.62" y1="38.1" x2="129.54" y2="38.1" width="0.1524" layer="91"/>
-<wire x1="129.54" y1="38.1" x2="124.46" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="129.54" y1="38.1" x2="116.84" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="134.62" y1="38.1" x2="134.62" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="134.62" y1="43.18" x2="149.86" y2="43.18" width="0.1524" layer="91"/>
 <junction x="134.62" y="38.1"/>
@@ -12711,7 +12777,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <segment>
 <wire x1="99.06" y1="38.1" x2="101.6" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="101.6" y1="38.1" x2="104.14" y2="38.1" width="0.1524" layer="91"/>
-<wire x1="104.14" y1="38.1" x2="109.22" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="104.14" y1="38.1" x2="116.84" y2="33.02" width="0.1524" layer="91"/>
 <wire x1="104.14" y1="71.12" x2="104.14" y2="45.72" width="0.1524" layer="91"/>
 <wire x1="104.14" y1="45.72" x2="104.14" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="63.5" y1="71.12" x2="104.14" y2="71.12" width="0.1524" layer="91"/>
@@ -12721,7 +12787,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <junction x="104.14" y="45.72"/>
 <pinref part="L1" gate="G$1" pin="2"/>
 <pinref part="L2" gate="G$1" pin="1"/>
-<pinref part="R2" gate="G$1" pin="2"/>
+<pinref part="RDIVH" gate="G$1" pin="2"/>
 <pinref part="C2" gate="G$1" pin="+"/>
 <pinref part="JP2" gate="G$1" pin="1"/>
 <pinref part="TP1" gate="G$1" pin="TP"/>
