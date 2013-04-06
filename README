@@ -36,3 +36,8 @@ C3 = 10uF tantalum
 D1 = 821-B0520LW Schottky Diodes & Rectifiers 20 Volt 0.5 Amp 5.5 Amp IFSM
 C2,4 = 100uF aluminum cap 0.3ohm ESR (647-UVR1V101MEA1TA)
 
+Results: (Load: 13.6 Ohms, ~350mA ~1.7W)
+
+~190mVpp ripple,  Freq: ~72kHZ
+~230mVpp ripple,  Freq: ~72kHZ (Before second LC filter)
+
